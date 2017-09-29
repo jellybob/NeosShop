@@ -36,7 +36,8 @@ class Order < ApplicationRecord
   def _apply_promo_for_new_items
     self.promotions.each { |promo| _apply_promo_code(promo) }
   end
-# ==========================
+
+  # ==========================
   # Only apply promo on existing item.
   def _apply_promo_code(promo)
     self[:total] = _promo_type(promo)
