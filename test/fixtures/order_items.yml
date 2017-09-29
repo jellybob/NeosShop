@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: order_items
+#
+#  id          :integer          not null, primary key
+#  item_id     :integer
+#  order_id    :integer
+#  user_id     :integer
+#  quantity    :integer
+#  total_price :decimal(12, 2)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  unit_price  :decimal(5, 2)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: one
+  order: one
+  user: one
+  quantity: 1
+  total_price: 9.99
+
+two:
+  item: two
+  order: two
+  user: two
+  quantity: 1
+  total_price: 9.99

@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: order_promotions
+#
+#  id           :integer          not null, primary key
+#  order_id     :integer
+#  promotion_id :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: one
+  promotion: one
+
+two:
+  order: two
+  promotion: two

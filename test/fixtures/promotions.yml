@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: promotions
+#
+#  id         :integer          not null, primary key
+#  code       :decimal(4, 2)
+#  promo_type :string
+#  standalone :boolean
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 9.99
+  type: 
+  standalone: false
+
+two:
+  code: 9.99
+  type: 
+  standalone: false
