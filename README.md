@@ -7,7 +7,7 @@
   * Rails 5.1.4
 
 * Database creation
-  * SQL lite
+  * SQLite
   
 * Database initialization
   * rake db:migrate && rake db:seed
@@ -29,7 +29,7 @@
   
 # Caveats:
   * Maintains only session_id, so if browser is closed session is lost. 
-    * To fix this cookies needs to be mainted.
+    * To fix this cookies needs to be maintained.
     
   * Business logics are held on models.
     * Some logics can be moved to a service class.
