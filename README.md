@@ -39,6 +39,8 @@
   * Better OrderStatus, ssl, 
   
   * Dockerise.
+  
+  * Better Query to avoid unnecessary query calls.
  
   
   
