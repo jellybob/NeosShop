@@ -41,6 +41,8 @@
   * Dockerise.
   
   * Better Query to avoid unnecessary query calls.
+  
+  * More test coverage needed.
  
   
   
