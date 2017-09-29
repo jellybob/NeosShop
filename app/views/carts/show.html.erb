@@ -1,0 +1,39 @@
+<% if @order_items.count > 0 %>
+  <h1>Your Shopping Cart</h1>
+  <% @order_items.each do |order_item| %>
+    <b><%= order_item.item.name %> </b>  <b>|</b>
+    <%= order_item.quantity %>  <b>|</b>
+    <%= number_to_currency(order_item.total_price, locale: :en) %> <b>|</b>
+    <%= link_to("Remove", order_item_path(order_item.id) , method: :delete) %>
+    <br><br>
+  <% end %>
+
+  <b>Subtotal: </b> <%= number_to_currency(@order.subtotal, locale: :en) %>
+
+  <br><br>
+  <b>Applied Promotion</b>
+  <% @applied_promotions.each do |ap| %>
+    <span><%= ap.promotion.code.to_f %> <%= ap.promotion.promo_type %></span> <b>|</b>
+    <%= link_to("Remove", order_promotion_path(ap.promotion.id) , method: :delete) %>
+  <% end %>
+  <hr>
+
+  <br>
+  <b>Total: </b> <%=  number_to_currency(@order.total, locale: :en) %> | <%= link_to 'Proceed to Checkout', checkouts_path %>
+  <hr>
+
+
+  <h2>Apply Promo codes</h2>
+  <% @promotions.each do |promo| %>
+      <span style="float:left"><%= promo.code.to_f %> <%= promo.promo_type %></span>
+      <span style="float:left">
+        <%= form_for @order_promotion do |f| %>
+          <%= f.check_box :order_id, value: @order_items.first.order.id %>
+          <%= f.hidden_field :promotion_id, value: promo.id %>
+          <%= f.submit 'Apply promo code.' %>
+        <% end %>
+      </span> <br><br>
+  <% end %>
+<% else %>
+    <h1>Your Shopping Cart is empty!</h1>
+<% end %>

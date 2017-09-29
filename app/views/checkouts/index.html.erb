@@ -1,0 +1,15 @@
+<h1>Checkout</h1>
+<h2> Total amount to pay <%= number_to_currency(@order.total, locale: :en) %> </h2>
+
+<%= form_for @card do |f| %>
+  <%= f.label :card_number,'Card Number' %>
+  <%= f.text_field :card_number %>
+  <%= f.hidden_field :user_id, value: 1 %>
+  <%= f.fields_for :checkouts, Checkout.new do |cc| %>
+    Email: <%= cc.text_field :email %>
+    Address: <%= cc.text_field :address %>
+    <%= cc.hidden_field :order_id, value: @order.id  %>
+  <% end %>
+
+  <%= f.submit 'Buy Now' %>
+<% end %>

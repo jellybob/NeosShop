@@ -1,0 +1,14 @@
+<h1> Thankyou for purchasing! </h1>
+<br><br><% @order.order_items.each do |oi| %>
+  <% item = oi.item %>
+  Name: <%= item.name %> | Price: <%= number_to_currency(item.price) %> | Total Price: <%= number_to_currency(oi.total_price) %><br>
+<% end %><br><br>
+
+Applied Promotion:
+<% @order.promotions.each do |promo| %>
+    <span><%= promo.code.to_f %> <%= promo.promo_type %></span>
+<% end %><br><br>
+
+Subtotal <%= @order.subtotal %><br><br>
+
+Total <%= @order.total %>

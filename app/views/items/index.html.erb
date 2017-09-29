@@ -1,0 +1,16 @@
+<h1>Items to shop</h1>
+
+<% @items.each do |item| %>
+  <h1> <%= item.name %> </h1>
+
+  <%= form_for @order_item do |f| %>
+    <h3> Unit Price: <span> <%= number_to_currency(item.price, locale: :en) %> </span> </h3>
+
+    <%= f.number_field :quantity, value: 1, min: 1 %>
+    <%= f.hidden_field :item_id, value: item.id %>
+    <%= f.hidden_field :user_id, value: 1 %>
+    <%= f.submit 'Add to cart' %>
+  <% end %>
+  <br><hr><br>
+
+<% end %>
