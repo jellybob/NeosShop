@@ -37,6 +37,8 @@
   * Custom Errors needs moving to its own concerns.
     
   * Better OrderStatus, ssl, 
+  
+  * Dockerise.
  
   
   
