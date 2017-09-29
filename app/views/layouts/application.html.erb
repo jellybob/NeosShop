@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NeosShop</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <span>
+      <%= link_to 'items', items_path %> |
+      <%= link_to 'basket', carts_path %>
+    </span>
+
+    <%= yield %>
+  </body>
+</html>
